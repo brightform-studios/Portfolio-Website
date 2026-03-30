@@ -58,15 +58,55 @@
 
     <header class="header-bar">
         <nav>
-            <button class="nav-btn">About</button>
-            <button class="nav-btn">Projects</button>
-            <button class="nav-btn">Links</button>
+            <button class="nav-btn" id="about-tab">About</button>
+            <button class="nav-btn" id="projects-tab">Projects</button>
+            <button class="nav-btn" id="links-tab">Links</button>
         </nav>
-
     </header>
 
     <main>
-        <section id="projects" class="projects-section">
+        <section id="about" class="about-section" style="display: block;">
+            <div class="about-card">
+                <div class="about-header">
+                    <div class="about-photo">
+                        <!-- Replace src with your photo if available -->
+                        <img src="https://via.placeholder.com/100" alt="Profile Photo" class="profile-img">
+                    </div>
+                    <div class="about-info">
+                        <div class="about-name">Name: <span id="about-name">Your Name</span></div>
+                        <div class="about-age">Age: <span id="about-age">--</span></div>
+                        <div class="about-contact">Contact: <a href="mailto:your@email.com" class="about-email">Create new email</a></div>
+                    </div>
+                </div>
+                <div class="about-dropdowns">
+                    <div class="dropdown-group">
+                        <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span> School / Degree</button>
+                        <div class="dropdown-content" style="display: none;">
+                            <div>BSc in Computer Science, TUNI</div>
+                            <div>MSc in Web Engineering, TUNI</div>
+                        </div>
+                    </div>
+                    <div class="dropdown-group">
+                        <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span> Experience / Past Work</button>
+                        <div class="dropdown-content" style="display: none;">
+                            <div>Web Developer at ExampleCorp</div>
+                            <div>Intern at TechStartup</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="projects-section" style="display: none;">
+                    <section id="links" class="links-section" style="display: none;">
+                        <div class="links-card">
+                            <h2 style="color:#fff; font-family:sans-serif;">Links</h2>
+                            <ul style="color:#eee; font-family:sans-serif;">
+                                <li><a href="https://github.com/" target="_blank" style="color:#4af;">GitHub</a></li>
+                                <li><a href="https://linkedin.com/" target="_blank" style="color:#4af;">LinkedIn</a></li>
+                                <!-- Add more links as needed -->
+                            </ul>
+                        </div>
+                    </section>
             <div class="project-card">
                 <div class="project-header">
                     <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span></button>
@@ -120,6 +160,167 @@
             </div>
         </section>
     </main>
+
+    <script>
+        // About dropdown toggle functionality
+        document.addEventListener('DOMContentLoaded', function () {
+                        // Dropdowns in Projects section
+                        const projectDropdownBtns = document.querySelectorAll('.projects-section .dropdown-btn');
+                        projectDropdownBtns.forEach(function (btn) {
+                            const content = btn.parentElement.nextElementSibling;
+                            const arrow = btn.querySelector('.arrow');
+                            btn.addEventListener('click', function () {
+                                const isOpen = content.style.display === 'block';
+                                if (!isOpen) {
+                                    content.style.display = 'block';
+                                    arrow.style.transform = 'rotate(90deg)';
+                                    btn.setAttribute('aria-expanded', 'true');
+                                } else {
+                                    content.style.display = 'none';
+                                    arrow.style.transform = 'rotate(0deg)';
+                                    btn.setAttribute('aria-expanded', 'false');
+                                }
+                            });
+                        });
+            // Dropdowns in About section
+            const aboutDropdownBtns = document.querySelectorAll('.about-section .dropdown-btn');
+            aboutDropdownBtns.forEach(function (btn) {
+                const content = btn.nextElementSibling;
+                const arrow = btn.querySelector('.arrow');
+                btn.addEventListener('click', function () {
+                    const isOpen = content.style.display === 'block';
+                    if (!isOpen) {
+                        content.style.display = 'block';
+                        arrow.style.transform = 'rotate(90deg)';
+                        btn.setAttribute('aria-expanded', 'true');
+                    } else {
+                        content.style.display = 'none';
+                        arrow.style.transform = 'rotate(0deg)';
+                        btn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Tab switching logic
+            const aboutSection = document.getElementById('about');
+            const projectsSection = document.getElementById('projects');
+            const linksSection = document.getElementById('links');
+            const aboutTab = document.getElementById('about-tab');
+            const projectsTab = document.getElementById('projects-tab');
+            const linksTab = document.getElementById('links-tab');
+
+            function setActiveTab(tab) {
+                [aboutTab, projectsTab, linksTab].forEach(btn => btn.classList.remove('active'));
+                tab.classList.add('active');
+            }
+            aboutTab.addEventListener('click', function () {
+                aboutSection.style.display = 'block';
+                projectsSection.style.display = 'none';
+                linksSection.style.display = 'none';
+                setActiveTab(aboutTab);
+            });
+            projectsTab.addEventListener('click', function () {
+                aboutSection.style.display = 'none';
+                projectsSection.style.display = 'flex';
+                linksSection.style.display = 'none';
+                setActiveTab(projectsTab);
+            });
+            linksTab.addEventListener('click', function () {
+                aboutSection.style.display = 'none';
+                projectsSection.style.display = 'none';
+                linksSection.style.display = 'block';
+                setActiveTab(linksTab);
+            });
+            // Set About as active on load
+            setActiveTab(aboutTab);
+        });
+    </script>
+    </style>
+
+    <style>
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        .about-card {
+            background: #222;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            width: 500px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .about-photo {
+            width: 100px;
+            height: 100px;
+            background: #555;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .about-name, .about-age, .about-contact {
+            font-size: 1.1rem;
+            font-family: sans-serif;
+        }
+        .about-email {
+            color: #4af;
+            text-decoration: underline;
+        }
+        .about-dropdowns {
+            margin-top: 1rem;
+        }
+        .dropdown-group {
+            margin-bottom: 1rem;
+        }
+        .dropdown-group .dropdown-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-family: sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dropdown-group .arrow {
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+        .dropdown-content {
+            background: #333;
+            border-radius: 6px;
+            padding: 0.8rem 1rem;
+            color: #eee;
+            display: none;
+        }
     </style>
     <script>
         // Dropdown toggle functionality
@@ -254,11 +455,16 @@
         font-size: 1.1rem;
         border-radius: 4px;
         cursor: pointer;
-        transition: background 0.2s;
+        transition: background 0.2s, color 0.2s;
     }
 
     .nav-btn:hover {
         background: #444;
+    }
+
+    .nav-btn.active {
+        background: #4af;
+        color: #111;
     }
 </style>
 
