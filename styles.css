@@ -1,0 +1,104 @@
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-dropdowns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-dropdown-card {
+    background: #222;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: 515px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.dropdown-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.photo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: #555;
+    border-radius: 8px;
+    margin-right: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 2rem;
+}
+
+.dropdown-row:first-child .photo-placeholder {
+    margin-top: 1rem;
+}
+
+.dropdown-text {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    background-image: url('background.png');
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+@media (max-width: 700px) {
+    .header-bar {
+        padding: 2rem 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .project-card {
+        width: 95vw;
+        min-width: 0;
+        padding: 1rem;
+    }
+
+    .dropdown-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .photo-placeholder {
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+
+    .projects-section {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-bar {
+        font-size: 1rem;
+        padding: 1rem 0.2rem;
+    }
+
+    .project-card {
+        width: 100vw;
+        padding: 0.5rem;
+    }
+
+    .dropdown-text {
+        font-size: 0.95rem;
+    }
+}

@@ -1,49 +1,4 @@
-</style>
-<style>
-    /* Responsive styles */
-    @media (max-width: 700px) {
-        .header-bar {
-            padding: 2rem 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .project-card {
-            width: 95vw;
-            min-width: 0;
-            padding: 1rem;
-        }
-
-        .dropdown-row {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .photo-placeholder {
-            margin-bottom: 0.5rem;
-            margin-right: 0;
-        }
-
-        .projects-section {
-            margin-top: 1.5rem;
-        }
-    }
-
-    @media (max-width: 400px) {
-        .header-bar {
-            font-size: 1rem;
-            padding: 1rem 0.2rem;
-        }
-
-        .project-card {
-            width: 100vw;
-            padding: 0.5rem;
-        }
-
-        .dropdown-text {
-            font-size: 0.95rem;
-        }
-    }
-</style>
+<link rel="stylesheet" href="styles.css">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +10,6 @@
 </head>
 
 <body>
-
     <header class="header-bar">
         <nav>
             <button class="nav-btn" id="about-tab">About</button>
@@ -67,57 +21,59 @@
     <main>
         <section id="about" class="about-section" style="display: block;">
             <div class="about-card">
-                <div class="about-header">
-                    <div class="about-photo">
-                        <img src="https://via.placeholder.com/100" alt="Profile Photo" class="profile-img">
+                <div class="about-header square-layout">
+                    <div class="about-photo square-photo">
+                        <img src="profile.jpg" alt="Profile Photo" class="profile-img">
                     </div>
                     <div class="about-info">
                         <div class="about-name">Name: <span id="about-name">Nana Autio</span></div>
                         <div class="about-age">Age: <span id="about-age">18</span></div>
-                        <div class="about-contact">Contact: <a href="mailto:your@email.com" class="about-email">--</a></div>
+                        <div class="about-contact">Contact: <a href="mailto:your@email.com"
+                                class="about-email">nana.autio@gmail.com</a></div>
                     </div>
                 </div>
             </div>
             <div style="height: 2rem;"></div>
-            <div class="about-dropdowns" style="width: 500px; max-width: 95vw; margin: 0 auto;">
-                <h3 style="color:#fff; font-family:sans-serif; margin-bottom:0.5rem;">Education</h3>
-                <div class="dropdown-group">
-                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span> School / Degree</button>
-                    <div class="dropdown-content" style="display: none;">
+            <!-- Schooling Dropdown -->
+            <div class="about-dropdowns">
+                <div class="dropdown-group about-dropdown-card">
+                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span>
+                        Degree</button>
+                    <div class="dropdown-content">
                         <div class="dropdown-row">
                             <div class="photo-placeholder"></div>
                             <div class="dropdown-text">
-                                <strong>BSc in Computer Science</strong><br>
-                                Tampere University (TUNI)<br>
-                                2018 - 2021
+                                <strong>Bachelors Degree in Media and Arts</strong><br>
+                                Tampere University of Applied Sciences (TAMK)<br>
+                                2025 - 2029
                             </div>
                         </div>
                         <div class="dropdown-row">
                             <div class="photo-placeholder"></div>
                             <div class="dropdown-text">
-                                <strong>MSc in Web Engineering</strong><br>
-                                Tampere University (TUNI)<br>
-                                2021 - 2024
+                                <strong>High School Diploma</strong><br>
+                                Lake Washington High School (LWHS)<br>
+                                2021 - 2025
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="height: 1.5rem;"></div>
-                <h3 style="color:#fff; font-family:sans-serif; margin-bottom:0.5rem;">Experience</h3>
-                <div class="dropdown-group">
-                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span> Experience / Past Work</button>
-                    <div class="dropdown-content" style="display: none;">
+            </div>
+            <div style="height: 1.5rem;"></div>
+            <div class="about-dropdowns">
+                <div class="dropdown-group about-dropdown-card">
+                    </style>
+                    <!-- Experience Dropdown -->
+                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;
+                        </span>Experience</button>
+                    <div class="dropdown-content">
                         <div class="dropdown-row">
                             <div class="photo-placeholder"></div>
-                            <div class="dropdown-text">
-                                Web Developer at ExampleCorp
-                            </div>
+                            <div class="dropdown-text">Internship at Verus Nordica</div>
                         </div>
                         <div class="dropdown-row">
                             <div class="photo-placeholder"></div>
-                            <div class="dropdown-text">
-                                Intern at TechStartup
-                            </div>
+                            <div class="dropdown-text">Client Project at TAMK</div>
                         </div>
                     </div>
                 </div>
@@ -130,61 +86,32 @@
                     <ul style="color:#eee; font-family:sans-serif;">
                         <li><a href="https://github.com/" target="_blank" style="color:#4af;">GitHub</a></li>
                         <li><a href="https://linkedin.com/" target="_blank" style="color:#4af;">LinkedIn</a></li>
-                        <!-- Add more links as needed -->
                     </ul>
                 </div>
             </section>
-            <div class="project-card">
-                <div class="project-header">
-                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span></button>
-                    <span class="project-title">Project Title</span>
+            <div class="about-dropdowns">
+                <div class="dropdown-group about-dropdown-card">
+                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span> Project
+                        1</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">Placeholder text 1</div>
+                        </div>
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">Placeholder text 2</div>
+                        </div>
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">Placeholder text 3</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-dropdown-content" style="display: none;">
-                    <div class="dropdown-row">
-                        <div class="photo-placeholder"></div>
-                        <div class="dropdown-text">Placeholder text 1</div>
-                    </div>
-                    <div class="dropdown-row">
-                        <div class="photo-placeholder"></div>
-                        <div class="dropdown-text">Placeholder text 2</div>
-                    </div>
-                    <div class="dropdown-row">
-                        <div class="photo-placeholder"></div>
-                        <div class="dropdown-text">Placeholder text 3</div>
-                    </div>
-                </div>
-                </style>
-                <style>
-                    .dropdown-row {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 1rem;
-                    }
-
-                    .photo-placeholder {
-                        width: 60px;
-                        height: 60px;
-                        background: #555;
-                        border-radius: 8px;
-                        margin-right: 1.2rem;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: #aaa;
-                        font-size: 2rem;
-                    }
-
-                    .dropdown-row:first-child .photo-placeholder {
-                        margin-top: 1rem;
-                    }
-
-                    .dropdown-text {
-                        color: #eee;
-                        font-family: sans-serif;
-                        font-size: 1rem;
-                    }
-                </style>
             </div>
+        </section>
+
+        </div>
         </section>
     </main>
 
@@ -209,23 +136,27 @@
                     }
                 });
             });
-            // Dropdowns in About section
+            // Dropdowns in About section (fix for multiple dropdowns)
             const aboutDropdownBtns = document.querySelectorAll('.about-section .dropdown-btn');
             aboutDropdownBtns.forEach(function (btn) {
-                const content = btn.nextElementSibling;
+                // Find the .dropdown-content inside the same .dropdown-group
+                const group = btn.closest('.dropdown-group');
+                const content = group ? group.querySelector('.dropdown-content') : null;
                 const arrow = btn.querySelector('.arrow');
-                btn.addEventListener('click', function () {
-                    const isOpen = content.style.display === 'block';
-                    if (!isOpen) {
-                        content.style.display = 'block';
-                        arrow.style.transform = 'rotate(90deg)';
-                        btn.setAttribute('aria-expanded', 'true');
-                    } else {
-                        content.style.display = 'none';
-                        arrow.style.transform = 'rotate(0deg)';
-                        btn.setAttribute('aria-expanded', 'false');
-                    }
-                });
+                if (content && arrow) {
+                    btn.addEventListener('click', function () {
+                        const isOpen = content.style.display === 'block';
+                        if (!isOpen) {
+                            content.style.display = 'block';
+                            arrow.style.transform = 'rotate(90deg)';
+                            btn.setAttribute('aria-expanded', 'true');
+                        } else {
+                            content.style.display = 'none';
+                            arrow.style.transform = 'rotate(0deg)';
+                            btn.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                }
             });
 
             // Tab switching logic
@@ -273,36 +204,39 @@
         }
 
         .about-card {
-            background: #222;
-            color: #fff;
+            background: #ffffff;
+            color: #000000;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            width: 500px;
-            padding: 1.5rem;
+            border: 15px solid #4466aa;
+            width: 440px;
+            padding: 3rem;
             margin: 2rem auto;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .about-header {
+
+        .about-header.square-layout {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
+            justify-content: space-between;
             gap: 1rem;
-            margin-bottom: 1.5rem;
         }
 
-        .about-photo {
-            width: 100px;
-            height: 100px;
+        .about-photo.square-photo {
+            width: 110px;
+            height: 110px;
             background: #555;
-            border-radius: 50%;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
+            margin-right: 2rem;
         }
 
         .profile-img {
@@ -320,7 +254,7 @@
         .about-name,
         .about-age,
         .about-contact {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-family: sans-serif;
         }
 
@@ -347,7 +281,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            margin-bottom: 0.5rem;
         }
 
         .dropdown-group .arrow {
@@ -356,35 +289,17 @@
         }
 
         .dropdown-content {
-            background: #333;
-            border-radius: 6px;
-            padding: 0.8rem 1rem;
+            background: #222;
+            border-radius: 8px;
+            border: 1.5px solid #444;
+            padding: 1rem 1.2rem;
             color: #eee;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.18);
             display: none;
+            z-index: 10;
         }
     </style>
-    <script>
-        // Dropdown toggle functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownBtn = document.querySelector('.dropdown-btn');
-            const dropdownContent = document.querySelector('.project-dropdown-content');
-            const arrow = document.querySelector('.dropdown-btn .arrow');
-            if (dropdownBtn && dropdownContent && arrow) {
-                dropdownBtn.addEventListener('click', function () {
-                    const isOpen = dropdownContent.style.display === 'block';
-                    if (!isOpen) {
-                        dropdownContent.style.display = 'block';
-                        arrow.style.transform = 'rotate(90deg)';
-                        dropdownBtn.setAttribute('aria-expanded', 'true');
-                    } else {
-                        dropdownContent.style.display = 'none';
-                        arrow.style.transform = 'rotate(0deg)';
-                        dropdownBtn.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            }
-        });
-    </script>
+
     </style>
     <style>
         .projects-section {
@@ -446,7 +361,6 @@
             transition: transform 0.2s;
         }
 
-        /* Remove hover and click color for dropdown arrow */
         .dropdown-btn:focus .arrow,
         .dropdown-btn:hover .arrow {
             color: #fff;
