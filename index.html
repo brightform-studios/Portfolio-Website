@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="styles.css">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,197 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="icon.png">
-</head>
-
-<body>
-    <header class="header-bar">
-        <nav>
-            <button class="nav-btn" id="about-tab">About</button>
-            <button class="nav-btn" id="projects-tab">Projects</button>
-            <button class="nav-btn" id="links-tab">Links</button>
-        </nav>
-    </header>
-
-    <main>
-        <section id="about" class="about-section" style="display: block;">
-            <div class="about-card">
-                <div class="about-header square-layout">
-                    <div class="about-photo square-photo">
-                        <img src="profile.jpg" alt="Profile Photo" class="profile-img">
-                    </div>
-                    <div class="about-info">
-                        <div class="about-name">Name: <span id="about-name">Nana Autio</span></div>
-                        <div class="about-age">Age: <span id="about-age">18</span></div>
-                        <div class="about-contact">Contact: <a href="mailto:your@email.com"
-                                class="about-email">nana.autio@gmail.com</a></div>
-                    </div>
-                </div>
-            </div>
-            <div style="height: 2rem;"></div>
-            <!-- Schooling Dropdown -->
-            <div class="about-dropdowns">
-                <div class="dropdown-group about-dropdown-card">
-                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span>
-                        Degree</button>
-                    <div class="dropdown-content">
-                        <div class="dropdown-row">
-                            <div class="photo-placeholder"></div>
-                            <div class="dropdown-text">
-                                <strong>Bachelors Degree in Media and Arts</strong><br>
-                                Tampere University of Applied Sciences (TAMK)<br>
-                                2025 - 2029
-                            </div>
-                        </div>
-                        <div class="dropdown-row">
-                            <div class="photo-placeholder"></div>
-                            <div class="dropdown-text">
-                                <strong>High School Diploma</strong><br>
-                                Lake Washington High School (LWHS)<br>
-                                2021 - 2025
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="height: 1.5rem;"></div>
-            <div class="about-dropdowns">
-                <div class="dropdown-group about-dropdown-card">
-                    </style>
-                    <!-- Experience Dropdown -->
-                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;
-                        </span>Experience</button>
-                    <div class="dropdown-content">
-                        <div class="dropdown-row">
-                            <div class="photo-placeholder"></div>
-                            <div class="dropdown-text">Internship at Verus Nordica</div>
-                        </div>
-                        <div class="dropdown-row">
-                            <div class="photo-placeholder"></div>
-                            <div class="dropdown-text">Client Project at TAMK</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="projects" class="projects-section" style="display: none;">
-            <section id="links" class="links-section" style="display: none;">
-                <div class="links-card">
-                    <h2 style="color:#fff; font-family:sans-serif;">Links</h2>
-                    <ul style="color:#eee; font-family:sans-serif;">
-                        <li><a href="https://github.com/" target="_blank" style="color:#4af;">GitHub</a></li>
-                        <li><a href="https://linkedin.com/" target="_blank" style="color:#4af;">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </section>
-            <div class="about-dropdowns">
-                <div class="dropdown-group about-dropdown-card">
-                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span> Project
-                        1</button>
-                    <div class="dropdown-content">
-                        <div class="dropdown-row">
-                            <div class="photo-placeholder"></div>
-                            <div class="dropdown-text">Placeholder text 1</div>
-                        </div>
-                        <div class="dropdown-row">
-                            <div class="photo-placeholder"></div>
-                            <div class="dropdown-text">Placeholder text 2</div>
-                        </div>
-                        <div class="dropdown-row">
-                            <div class="photo-placeholder"></div>
-                            <div class="dropdown-text">Placeholder text 3</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        </div>
-        </section>
-    </main>
-
-    <script>
-        // About dropdown toggle functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            // Dropdowns in Projects section
-            const projectDropdownBtns = document.querySelectorAll('.projects-section .dropdown-btn');
-            projectDropdownBtns.forEach(function (btn) {
-                const content = btn.parentElement.nextElementSibling;
-                const arrow = btn.querySelector('.arrow');
-                btn.addEventListener('click', function () {
-                    const isOpen = content.style.display === 'block';
-                    if (!isOpen) {
-                        content.style.display = 'block';
-                        arrow.style.transform = 'rotate(90deg)';
-                        btn.setAttribute('aria-expanded', 'true');
-                    } else {
-                        content.style.display = 'none';
-                        arrow.style.transform = 'rotate(0deg)';
-                        btn.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
-            // Dropdowns in About section (fix for multiple dropdowns)
-            const aboutDropdownBtns = document.querySelectorAll('.about-section .dropdown-btn');
-            aboutDropdownBtns.forEach(function (btn) {
-                // Find the .dropdown-content inside the same .dropdown-group
-                const group = btn.closest('.dropdown-group');
-                const content = group ? group.querySelector('.dropdown-content') : null;
-                const arrow = btn.querySelector('.arrow');
-                if (content && arrow) {
-                    btn.addEventListener('click', function () {
-                        const isOpen = content.style.display === 'block';
-                        if (!isOpen) {
-                            content.style.display = 'block';
-                            arrow.style.transform = 'rotate(90deg)';
-                            btn.setAttribute('aria-expanded', 'true');
-                        } else {
-                            content.style.display = 'none';
-                            arrow.style.transform = 'rotate(0deg)';
-                            btn.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                }
-            });
-
-            // Tab switching logic
-            const aboutSection = document.getElementById('about');
-            const projectsSection = document.getElementById('projects');
-            const linksSection = document.getElementById('links');
-            const aboutTab = document.getElementById('about-tab');
-            const projectsTab = document.getElementById('projects-tab');
-            const linksTab = document.getElementById('links-tab');
-
-            function setActiveTab(tab) {
-                [aboutTab, projectsTab, linksTab].forEach(btn => btn.classList.remove('active'));
-                tab.classList.add('active');
-            }
-            aboutTab.addEventListener('click', function () {
-                aboutSection.style.display = 'block';
-                projectsSection.style.display = 'none';
-                linksSection.style.display = 'none';
-                setActiveTab(aboutTab);
-            });
-            projectsTab.addEventListener('click', function () {
-                aboutSection.style.display = 'none';
-                projectsSection.style.display = 'flex';
-                linksSection.style.display = 'none';
-                setActiveTab(projectsTab);
-            });
-            linksTab.addEventListener('click', function () {
-                aboutSection.style.display = 'none';
-                projectsSection.style.display = 'none';
-                linksSection.style.display = 'block';
-                setActiveTab(linksTab);
-            });
-            // Set About as active on load
-            setActiveTab(aboutTab);
-        });
-    </script>
-    </style>
-
     <style>
-        .about-section {
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        main {
+            width: min(100%, 1100px);
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .header-bar {
+            background: #222;
+            padding: 3rem 0;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .header-bar nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-btn {
+            background: #0c0c0c;
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            font-weight: bold;
+        }
+
+        .nav-btn.active {
+            background: rgb(57, 105, 225);
+            color: #ffffff;
+        }
+
+        .about-section,
+        .projects-section,
+        .links-section {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -205,10 +77,10 @@
 
         .about-card {
             background: #ffffff;
-            color: #000000;
+            color: #222;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            border: 15px solid #4466aa;
+            border: 25px solid #222;
             width: 440px;
             padding: 3rem;
             margin: 2rem auto;
@@ -216,7 +88,6 @@
             flex-direction: column;
             align-items: center;
         }
-
 
         .about-header.square-layout {
             display: flex;
@@ -230,6 +101,7 @@
             width: 110px;
             height: 110px;
             background: #555;
+            border: 3px solid #333;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -265,10 +137,30 @@
 
         .about-dropdowns {
             margin-top: 1rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .dropdown-group {
             margin-bottom: 1rem;
+        }
+
+        .about-dropdown-card,
+        .project-card,
+        .links-card {
+            background: #222;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            width: min(100%, 540px);
+            max-width: 100%;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
         }
 
         .dropdown-group .dropdown-btn {
@@ -281,59 +173,66 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-weight: bold;
+            padding-top: 0.15rem;
+            margin-left: 0;
+            height: auto;
         }
 
         .dropdown-group .arrow {
             font-size: 1.2rem;
             transition: transform 0.2s;
+            line-height: 1;
+            vertical-align: middle;
+            display: inline-block;
         }
 
         .dropdown-content {
-            background: #222;
+            background: #ffffff;
             border-radius: 8px;
-            border: 1.5px solid #444;
+            border: 1.5px solid #000000;
             padding: 1rem 1.2rem;
-            color: #eee;
+            color: #ffffff;
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.18);
             display: none;
             z-index: 10;
+            margin-top: 1.3rem;
         }
-    </style>
 
-    </style>
-    <style>
-        .projects-section {
+        .dropdown-row {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            margin-top: 3rem;
+            margin-bottom: 1rem;
         }
 
-        .project-card {
-            background: #222;
-            color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            width: 500px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
+        .photo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: #dadada;
+            border: 3px solid #333;
+            border-radius: 8px;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 2rem;
+        }
+
+        .dropdown-row:first-child .photo-placeholder {
+            margin-top: 1.7rem;
+        }
+
+        .dropdown-text {
+            color: #141414;
+            font-family: sans-serif;
+            font-size: 1rem;
         }
 
         .project-header {
             display: flex;
             align-items: center;
             gap: 0.7rem;
-        }
-
-        .dropdown-btn {
-            display: flex;
-            align-items: center;
-            height: 1.2em;
-        }
-
-        .arrow {
-            line-height: 1;
-            vertical-align: middle;
         }
 
         .project-title {
@@ -343,84 +242,262 @@
             letter-spacing: 1px;
         }
 
-        .dropdown-btn {
-            background: none;
-            border: none;
-            padding: 0;
-            margin-left: 0.5rem;
-            cursor: pointer;
-            outline: none;
-            display: flex;
-            align-items: center;
+        .links-card h2,
+        .links-card ul {
+            font-family: sans-serif;
         }
 
-        .dropdown-btn .arrow {
-            display: inline-block;
-            font-size: 1.5rem;
-            color: #fff;
-            transition: transform 0.2s;
+        .links-card h2 {
+            color: #ffffff;
+            margin-top: 0;
         }
 
-        .dropdown-btn:focus .arrow,
-        .dropdown-btn:hover .arrow {
-            color: #fff;
-        }
-
-        .project-dropdown-content {
-            margin-top: 1rem;
-            background: #333;
-            border-radius: 6px;
-            padding: 1rem;
+        .links-card ul {
             color: #eee;
+            padding-left: 1.25rem;
+        }
+
+        .links-card a {
+            color: #4af;
+        }
+
+        .about-card {
+            width: min(100%, 540px);
+            padding: clamp(1rem, 4vw, 3rem);
+        }
+
+        @media (max-width: 900px) {
+            .header-bar {
+                padding: 1.5rem 1rem;
+            }
+
+            .header-bar nav {
+                gap: 0.75rem;
+                flex-wrap: wrap;
+            }
+
+            .nav-btn {
+                padding: 0.65rem 1.1rem;
+                font-size: 1rem;
+            }
+
+            .about-header.square-layout {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .about-photo.square-photo {
+                margin-right: 0;
+            }
+
+            .dropdown-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+
+            .photo-placeholder {
+                margin-right: 0;
+                margin-bottom: 0.35rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .about-section,
+            .projects-section,
+            .links-section {
+                margin-top: 1.25rem;
+            }
+
+            .about-card,
+            .project-card,
+            .about-dropdown-card,
+            .links-card {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .about-name,
+            .about-age,
+            .about-contact,
+            .project-title,
+            .dropdown-group .dropdown-btn,
+            .dropdown-text {
+                font-size: 1rem;
+            }
+
+            .header-bar nav {
+                flex-direction: column;
+                align-items: stretch;
+                width: min(100%, 380px);
+                margin: 0 auto;
+            }
+
+            .nav-btn {
+                width: 100%;
+            }
         }
     </style>
+</head>
 
+<body>
+    <header class="header-bar">
+        <nav>
+            <button class="nav-btn" id="about-tab">About</button>
+            <button class="nav-btn" id="projects-tab">Projects</button>
+            <button class="nav-btn" id="links-tab">Links</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="about-section" style="display: block;">
+            <div class="about-card">
+                <div class="about-header square-layout">
+                    <div class="about-photo square-photo">
+                        <img src="profile.jpg" alt="Profile Photo" class="profile-img">
+                    </div>
+                    <div class="about-info">
+                        <div class="about-name"> <span id="about-name">Nana Autio</span></div>
+                        <div class="about-age"> <span id="about-age">001101010011</span></div>
+                        <div class="about-contact">Email: <a href="mailto:your@email.com"
+                                class="about-email">nana.autio@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-dropdowns">
+                <div class="dropdown-group about-dropdown-card">
+                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span>Degree</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">
+                                <strong>Bachelors Degree in Media and Arts</strong><br>
+                                Tampere University of Applied Sciences (TAMK)<br>
+                                2025 - 2029
+                            </div>
+                        </div>
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">
+                                <strong>High School Diploma</strong><br>
+                                Lake Washington High School (LWHS)<br>
+                                2021 - 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-dropdowns">
+                <div class="dropdown-group about-dropdown-card">
+                    <button class="dropdown-btn" aria-expanded="false"><span
+                            class="arrow">&#9654;</span>Experience</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">Internship at Verus Nordica</div>
+                        </div>
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">Client Project at TAMK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section" style="display: none;">
+            <div class="about-dropdowns">
+                <div class="dropdown-group about-dropdown-card project-card">
+                    <button class="dropdown-btn" aria-expanded="false"><span class="arrow">&#9654;</span>Project
+                        1</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">Placeholder text 1</div>
+                        </div>
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">Placeholder text 2</div>
+                        </div>
+                        <div class="dropdown-row">
+                            <div class="photo-placeholder"></div>
+                            <div class="dropdown-text">Placeholder text 3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="links" class="links-section" style="display: none;">
+            <div class="links-card">
+                <h2>Links</h2>
+                <ul>
+                    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                    <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownBtns = document.querySelectorAll('.dropdown-group .dropdown-btn');
+            dropdownBtns.forEach(function (btn) {
+                const group = btn.closest('.dropdown-group');
+                const content = group ? group.querySelector('.dropdown-content') : null;
+                const arrow = btn.querySelector('.arrow');
+                if (!content || !arrow) return;
+
+                btn.addEventListener('click', function () {
+                    const isOpen = content.style.display === 'block';
+                    content.style.display = isOpen ? 'none' : 'block';
+                    arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(90deg)';
+                    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+                });
+            });
+
+            const aboutSection = document.getElementById('about');
+            const projectsSection = document.getElementById('projects');
+            const linksSection = document.getElementById('links');
+            const aboutTab = document.getElementById('about-tab');
+            const projectsTab = document.getElementById('projects-tab');
+            const linksTab = document.getElementById('links-tab');
+
+            function setActiveTab(tab) {
+                [aboutTab, projectsTab, linksTab].forEach(function (button) {
+                    button.classList.remove('active');
+                });
+                tab.classList.add('active');
+            }
+
+            aboutTab.addEventListener('click', function () {
+                aboutSection.style.display = 'flex';
+                projectsSection.style.display = 'none';
+                linksSection.style.display = 'none';
+                setActiveTab(aboutTab);
+            });
+
+            projectsTab.addEventListener('click', function () {
+                aboutSection.style.display = 'none';
+                projectsSection.style.display = 'flex';
+                linksSection.style.display = 'none';
+                setActiveTab(projectsTab);
+            });
+
+            linksTab.addEventListener('click', function () {
+                aboutSection.style.display = 'none';
+                projectsSection.style.display = 'none';
+                linksSection.style.display = 'flex';
+                setActiveTab(linksTab);
+            });
+
+            setActiveTab(aboutTab);
+        });
+    </script>
 </body>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    .header-bar {
-        background: #111;
-        padding: 3rem 0;
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .header-bar nav {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-    }
-
-    .nav-btn {
-        background: #222;
-        color: #fff;
-        border: none;
-        padding: 0.75rem 2rem;
-        font-size: 1.1rem;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background 0.2s, color 0.2s;
-    }
-
-    .nav-btn:hover {
-        background: #444;
-    }
-
-    .nav-btn.active {
-        background: #4af;
-        color: #111;
-    }
-</style>
 
 </html>
