@@ -1,3 +1,37 @@
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: inherit;
+    font-weight: inherit;
+    justify-content: center;
+    gap: 0;
+}
+
+.footer-left {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-sep {
+    color: #fff;
+    font-size: 1.1em;
+    margin: 0 0.2em;
+    user-select: none;
+}
+
 /* Site title header */
 .site-title {
     color: #fff;
@@ -10,6 +44,13 @@
 }
 
 /* Footer styles */
+.footer-social-links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
 
 html,
 body {
@@ -40,6 +81,7 @@ body {
     font-weight: 700;
     justify-content: space-between;
 }
+
 .footer-github-link {
     display: flex;
     align-items: center;
