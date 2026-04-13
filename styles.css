@@ -30,7 +30,7 @@ body {
     position: relative;
     background: #191919;
     color: #fff;
-    padding: 2.5rem 0 2.5rem 2rem;
+    padding: 2.5rem 2rem 2.5rem 2rem;
     font-size: 1rem;
     display: flex;
     align-items: center;
@@ -38,6 +38,23 @@ body {
     margin-top: auto;
     font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 700;
+    justify-content: space-between;
+}
+.footer-github-link {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    text-decoration: none;
+    opacity: 0.85;
+    line-height: 0;
+    color: #ffffff !important;
+}
+
+
+.footer-github-link svg {
+    width: 45px;
+    height: 45px;
+    fill: currentColor;
 }
 
 .footer-left {
