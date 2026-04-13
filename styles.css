@@ -45,7 +45,6 @@ body {
     align-items: center;
     margin-left: 1rem;
     text-decoration: none;
-    opacity: 0.85;
     line-height: 0;
     color: #ffffff !important;
 }
@@ -102,21 +101,28 @@ main {
     position: absolute;
     top: 50%;
     left: 2.7rem;
-    transform: translateY(-50%);
     color: #fff;
-    opacity: 0.85;
-    transition: opacity 0.2s, transform 0.2s;
     line-height: 0;
-}
-
-.github-link:hover {
-    opacity: 1;
-    transform: translateY(-50%) scale(1.15);
 }
 
 .github-link svg {
     width: 56px;
     height: 56px;
+    fill: currentColor;
+}
+
+.footer-linkedin-link {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    line-height: 0;
+    color: #ffffff !important;
+}
+
+.footer-linkedin-link svg {
+    width: 43px;
+    height: 43px;
     fill: currentColor;
 }
 
