@@ -1,3 +1,50 @@
+/* Site title header */
+.site-title {
+    color: #fff;
+    font-size: 3.0rem;
+    font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 750;
+    margin: -13px 0 2.5rem 0;
+    /* letter-spacing removed */
+    text-align: center;
+}
+
+/* Footer styles */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer styles */
+.site-footer {
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    position: relative;
+    background: #191919;
+    color: #fff;
+    padding: 2.5rem 0 2.5rem 2rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #2c68c4;
+    margin-top: auto;
+    font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.footer-left {
+    flex: 1;
+    text-align: left;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -17,7 +64,7 @@ main {
 }
 
 .header-bar {
-    background: #2c68c4;
+    background: #191919;
     padding: 4rem 0;
     width: 100vw;
     position: relative;
@@ -57,7 +104,7 @@ main {
 }
 
 .nav-btn {
-    background: #191919;
+    background: #000000;
     color: #ffffff;
     border: none;
     padding: 0.75rem 2rem;
@@ -69,8 +116,8 @@ main {
 }
 
 .nav-btn.active {
-    background: #fff;
-    color: #191919;
+    background: #2c68c4;
+    color: #ffffff;
 }
 
 .about-section,
@@ -100,6 +147,7 @@ main {
 }
 
 @media (max-width: 600px) {
+
     .about-section,
     .projects-section,
     .links-section {
