@@ -1,5 +1,5 @@
 
-# Portfolio Website (WIP)
+# Portfolio Website
 
 My CV and project portfolio website
 
