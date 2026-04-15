@@ -11,7 +11,7 @@
 
 <body>
     <header class="header-bar">
-        <h1 class="site-title">BRIGHTFORM STUDIOS</h1>
+        <h1 class="site-title"><img src="icon.png" alt="Brightform Icon" class="site-icon"> BRIGHTFORM STUDIOS</h1>
         <!-- GitHub link removed from header -->
         <nav>
             <button class="nav-btn" id="about-tab">About</button>
@@ -23,7 +23,30 @@
     <main>
         <section id="about" class="about-section" style="display: flex;"></section>
 
-        <section id="projects" class="projects-section" style="display: none;"></section>
+        <section id="projects" class="projects-section"
+            style="display: none; flex-direction: column; gap: 32px; padding: 32px 0;">
+            <div class="project-card compact-project-card">
+                <div class="compact-left">
+                    <h2 class="project-title">PROJECT TITLE</h2>
+                    <div class="project-image"></div>
+                </div>
+                <div class="compact-right">
+                    <div class="project-details">
+                        <strong>Project details</strong>
+                        <ul>
+                            <li>──── ── ────── ────</li>
+                            <li>───────── ── ─ ────────</li>
+                            <li>── ─ ────────── ──────</li>
+                        </ul>
+                    </div>
+                    <div class="project-link">
+                        <strong>Website Link</strong><br>
+                        <span>──── ── ────── ──────</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Duplicate .project-card for more projects -->
+        </section>
 
         <section id="services" class="services-section" style="display: none;"></section>
     </main>
