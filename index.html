@@ -128,7 +128,9 @@
                     <div class="project-details">
                         <strong class="details-title">PROJECT DETAILS</strong>
                         <ul>
-                            <li><strong>The tale of twisted shapes is a magical game where geometric creatures rise from a pop-up book. Draw spells to defeat them and help the wizard to survive his own unleashed magic.</strong></li>
+                            <li><strong>The tale of twisted shapes is a magical game where geometric creatures rise from
+                                    a pop-up book. Draw spells to defeat them and help the wizard to survive his own
+                                    unleashed magic.</strong></li>
                         </ul>
                     </div>
                     <div class="project-details">
@@ -180,6 +182,16 @@
                 tab.classList.add('active');
             }
 
+            function showSection(name) {
+                aboutSection.style.display = 'none';
+                projectsSection.style.display = 'none';
+                servicesSection.style.display = 'none';
+                if (name === 'about') { aboutSection.style.display = 'flex'; setActiveTab(aboutTab); }
+                else if (name === 'projects') { projectsSection.style.display = 'flex'; setActiveTab(projectsTab); }
+                else if (name === 'services') { servicesSection.style.display = 'flex'; setActiveTab(servicesTab); }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
             aboutTab.addEventListener('click', function () {
                 aboutSection.style.display = 'flex';
                 projectsSection.style.display = 'none';
@@ -199,6 +211,13 @@
                 projectsSection.style.display = 'none';
                 servicesSection.style.display = 'flex';
                 setActiveTab(servicesTab);
+            });
+
+            document.querySelectorAll('.footer-nav a').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showSection(this.getAttribute('href').replace('#', ''));
+                });
             });
 
             setActiveTab(aboutTab);
