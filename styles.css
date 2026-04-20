@@ -40,6 +40,8 @@
     font-weight: bold;
     text-decoration: none;
     transition: text-decoration 0.2s;
+    display: inline-block;
+    margin-top: 8px;
 }
 
 .project-link a:hover {
